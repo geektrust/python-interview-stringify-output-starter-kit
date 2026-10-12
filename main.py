@@ -1,26 +1,37 @@
+import json
+
+
 class Main:
     def handle(self, input_str):
         """
         ***********************************************
         * This method parses the input string and     *
-        * extracts the required value.                *
+        * prints the result as a string.              *
         ***********************************************
 
-        Format of input_str: "Input"
-        Example: "Hello"
+        Format of input_str: "<space-separated values>"
+        Example: "1 2 3"
 
-        The input string is split by spaces and the first value
-        is retrieved and stored in the variable `input`.
+        The input string is split by spaces and the values are
+        stored in the list `input_list`. You may need to typecast
+        them depending on the problem statement.
 
-        Once retrieved, it is available as string data for you
-        to implement the solution. You may need to typecast it
-        depending on the problem statement.
-
-        Your final output needs to be printed to the console.
+        Store your final answer in `result`. It can be any value:
+        a number, a string, a boolean, a list, a nested list or a
+        dictionary. The last line prints it as a string, e.g.
+            [[1, 2], [3]]      -> [[1,2],[3]]
+            ["a", "b"]         -> ["a","b"]
+            {"count": 2}       -> {"count":2}
+            True               -> true
+        Don't change that line.
         """
 
-        input_list = input_str.strip().split(" ")
-        input = input_list[0]
+        input_list = input_str.strip().split()
+        result = None
 
         # Start your implementation from here.
-        print("Input String:", input)
+
+        print(self.stringify(result))
+
+    def stringify(self, value):
+        return json.dumps(value, separators=(",", ":"))

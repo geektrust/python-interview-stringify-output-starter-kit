@@ -46,6 +46,15 @@ The exact problem statement, constraints, and expected output format will be pro
 
 - Output must match the expected format **exactly**
 - No extra logs or debug prints
+- Store your answer in `result` inside `handle`. The last line of `handle` prints it as a compact JSON string — don't change that line
+
+| `result`               | Printed output   |
+| ---------------------- | ---------------- |
+| `[[1, 2], [3]]`        | `[[1,2],[3]]`    |
+| `[["eat", "tea"]]`     | `[["eat","tea"]]`|
+| `{"count": 2}`         | `{"count":2}`    |
+| `"abc"`                | `"abc"`          |
+| `True` / `None`        | `true` / `null`  |
 
 ---
 
@@ -55,8 +64,9 @@ The exact problem statement, constraints, and expected output format will be pro
 .
 ├── run.sh               # Runs the solution with given input strings
 ├── run_unittests.sh     # Executes all unit tests
+├── gt_main_wrapper.py   # Driver code, don't change
 ├── main.py              # Your implementation
-├── test_sample.py               # Unit tests
+├── test_sample.py       # Unit tests
 └── README.md            # Documentation
 ```
 
